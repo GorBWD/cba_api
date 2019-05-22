@@ -1,0 +1,29 @@
+{
+  "name": "cba_api",
+  "version": "1.0.0",
+  "description": "cba api",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app",
+    "start": "node app",
+    "cron": "node cron"
+  },
+  "author": "Gor Sharmazanyan",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cron": "^1.7.1",
+    "dotenv": "^8.0.0",
+    "easy-soap-request": "^2.5.0",
+    "ejs": "^2.6.1",
+    "express": "^4.17.0",
+    "knex": "^0.16.5",
+    "objection": "^1.6.9",
+    "pg": "^7.11.0",
+    "xml2js": "^0.4.19"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.0"
+  }
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Central Bank of the Republic of Armenia Api</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+</head>
+<body>
+    <div id="container" style="min-width: 310px; height: 300px; margin: 0 auto"></div>
+    <h2 class="text-center text-secondary mb-5 title">Central Bank of the Republic of Armenia Api</h2>
+    <div class="container">
+        <form action="http://localhost:3000/rates" method="GET" onsubmit="return updateRates(event)">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input type="date" name="start" class="form-control" value="2017-01-01" required>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input type="date" name="end" class="form-control" value="2019-01-01" required>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <select name="codes" class="form-control" required>
+                            <% iso.map(item => { %>
+                                <option value="<%= item.iso %>"><%= item.iso %></option>
+                            <% }); %>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <script src="/js/script.js"></script>
+</body>
+</html>
